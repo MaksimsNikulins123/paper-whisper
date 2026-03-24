@@ -12,9 +12,10 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="px-3 py-1 border border-neutral-400 rounded text-sm 
-                 hover:bg-black hover:text-white 
-                 dark:hover:bg-white dark:hover:text-black transition"
+      className="hidden sm:block px-5 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium
+             tracking-wide text-neutral-600 dark:text-neutral-300
+             hover:border-[#8d6e63] hover:text-[#8d6e63] dark:hover:text-[#d7ccc8]
+             transition-all duration-300 active:scale-95"
     >
       {theme === 'light' ? '🌙' : '☀️'}
     </button>
