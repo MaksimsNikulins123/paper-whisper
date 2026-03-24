@@ -1,6 +1,5 @@
 import './globals.css';
-import Header from '@/components/layout/Header';
-// import Footer from "@/components/layout/Footer";
+import { Providers } from '@/components/providers';
 
 export default function RootLayout({
   children,
@@ -8,11 +7,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
-      <body className="bg-[#f7f3ef] text-[#1a1a1a]">
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        {/* <Footer /> */}
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

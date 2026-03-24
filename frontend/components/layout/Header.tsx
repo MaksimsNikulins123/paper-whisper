@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeToggle from "@/components/ui/ThemeToggle";
-import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 export default function Header() {
   return (
-    <header className="w-full border-b border-neutral-200 bg-[#f7f3ef]">
+    <header className="w-full border-b border-neutral-200 bg-[#f7f3ef] text-black dark:bg-black dark:text-white">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -13,8 +13,8 @@ export default function Header() {
             width={32}
             height={32}
             alt="logo"
-            loading="eager" 
-            style={{ width: "auto", height: "auto" }}
+            loading="eager"
+            style={{ width: 'auto', height: 'auto' }}
           />
           <span className="font-semibold text-lg">Paper Whisper</span>
         </Link>
@@ -24,11 +24,19 @@ export default function Header() {
           <Link href="/about">О нас</Link>
         </nav>
         <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <button className="px-4 py-2 text-sm border border-black dark:border-white">
+          <ThemeSwitcher />
+          <button
+            className="px-3 py-1 border border-neutral-400 rounded text-sm 
+                 hover:bg-black hover:text-white 
+                 dark:hover:bg-white dark:hover:text-black transition"
+          >
             Войти
           </button>
-          <button className="px-4 py-2 text-sm bg-black text-white dark:bg-white dark:text-black">
+          <button
+            className="px-3 py-1 border border-neutral-400 rounded text-sm bg-black text-white
+                 hover:bg-[#f7f3ef] hover:text-black 
+                 dark:hover:bg-white dark:hover:text-black transition"
+          >
             Создать
           </button>
           <LanguageSwitcher />

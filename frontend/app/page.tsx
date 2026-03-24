@@ -5,9 +5,12 @@
 // import Testimonials from '@/components/sections/Testimonials';
 // import FAQ from '@/components/sections/FAQ';
 
+import Header from '@/components/layout/Header';
+
 export default function HomePage() {
   return (
     <>
+      <Header />
       {/* <Hero /> */}
       {/* <Features /> */}
       {/* <Categories /> */}
