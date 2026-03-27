@@ -1,5 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { useState } from 'react';
+import { createClient } from '@/src/utils/supabase/client'; // Путь к твоему клиенту
+
 import {
   SiFacebook,
   SiInstagram,
@@ -33,6 +39,27 @@ const footerLinks = {
 };
 
 export const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
+  const supabase = createClient();
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    const { error } = await supabase.from('subscriptions').insert([{ email }]);
+
+    if (error) {
+      console.error(error);
+      setStatus('error');
+    } else {
+      setStatus('success');
+      setEmail('');
+    }
+  };
+
   return (
     <footer className="w-full bg-[#f7f3ef] dark:bg-black pt-20 pb-10 transition-colors duration-500 border-t border-neutral-200 dark:border-neutral-900">
       <div className="max-w-6xl mx-auto px-6">
@@ -56,16 +83,31 @@ export const Footer = () => {
               <p className="text-neutral-800 dark:text-neutral-200 font-medium">
                 Получайте новости о свежих дизайнах и скидках.
               </p>
-              <form className="flex flex-col xl:flex-row gap-3">
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col xl:flex-row gap-3"
+              >
                 <input
                   type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Ваша почта"
                   className="w-full xl:flex-1 px-5 py-3 bg-transparent border border-neutral-300 dark:border-neutral-700 rounded-full text-sm outline-none focus:border-[#8d6e63] dark:focus:border-[#d7ccc8] transition-all"
                 />
-                <button className="flex items-center justify-center mx-auto min-w-[160px] px-10 py-3 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium tracking-wide text-neutral-600 dark:text-neutral-300 hover:border-[#8d6e63] hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-all duration-300 active:scale-95 antialiased">
-                  Подписаться
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="flex items-center justify-center mx-auto min-w-[160px] px-10 py-3 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium tracking-wide text-neutral-600 dark:text-neutral-300 hover:border-[#8d6e63] hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-all duration-300 active:scale-95 antialiased"
+                >
+                  {status === 'loading' ? 'Отправка...' : 'Подписаться'}
                 </button>
               </form>
+              {status === 'success' && (
+                <p className="text-[10px] text-neutral-500 leading-relaxed max-w-xs">
+                  Вы успешно подписаны!
+                </p>
+              )}
               <p className="text-[10px] text-neutral-500 leading-relaxed max-w-xs">
                 Подписываясь, вы соглашаетесь с политикой конфиденциальности и
                 даёте согласие на получение обновлений.

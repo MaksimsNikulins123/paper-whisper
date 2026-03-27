@@ -51,9 +51,12 @@ export const Header = () => {
         <div className="flex items-center gap-3">
           <ThemeSwitcher />
           <div className="hidden md:flex items-center gap-3">
-            <button className="min-w-[100px] px-5 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium hover:border-[#8d6e63] transition-all">
-              Login
-            </button>
+            <Link href="/login">
+              <button className="min-w-[100px] px-5 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium hover:border-[#8d6e63] transition-all">
+                Login
+              </button>
+            </Link>
+
             <button className="min-w-[100px] px-5 py-2 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium hover:border-[#8d6e63] transition-all">
               Customize
             </button>
