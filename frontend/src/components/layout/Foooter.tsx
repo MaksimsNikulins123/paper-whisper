@@ -1,0 +1,157 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  SiFacebook,
+  SiInstagram,
+  SiX,
+  SiLinkerd,
+  SiYoutube,
+} from '@icons-pack/react-simple-icons';
+
+const footerLinks = {
+  products: [
+    { name: 'Каталог', href: '/catalog' },
+    { name: 'Конструктор', href: '/constructor' },
+    { name: 'О нас', href: '/about' },
+    { name: 'Контакты', href: '/contacts' },
+    { name: 'Помощь', href: '/help' },
+  ],
+  info: [
+    { name: 'Блог', href: '/blog' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Доставка', href: '/shipping' },
+    { name: 'Возвраты', href: '/returns' },
+    { name: 'Гарантия', href: '/warranty' },
+  ],
+  social: [
+    { name: 'Facebook', href: '#', icon: SiFacebook },
+    { name: 'Instagram', href: '#', icon: SiInstagram },
+    { name: 'X', href: '#', icon: SiX },
+    { name: 'LinkedIn', href: '#', icon: SiLinkerd },
+    { name: 'YouTube', href: '#', icon: SiYoutube },
+  ],
+};
+
+export const Footer = () => {
+  return (
+    <footer className="w-full bg-[#f7f3ef] dark:bg-black pt-20 pb-10 transition-colors duration-500 border-t border-neutral-200 dark:border-neutral-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+          <div className="md:col-span-5 space-y-8">
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image
+                src="/logo.svg"
+                width={32}
+                height={32}
+                alt="logo"
+                loading="eager"
+                style={{ width: '40px', height: 'auto' }}
+                className="group-hover:rotate-12 transition-transform"
+              />
+              <span className="font-semibold text-lg tracking-tight whitespace-nowrap">
+                Paper Whisper
+              </span>
+            </Link>
+            <div className="space-y-4">
+              <p className="text-neutral-800 dark:text-neutral-200 font-medium">
+                Получайте новости о свежих дизайнах и скидках.
+              </p>
+              <form className="flex flex-col xl:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Ваша почта"
+                  className="w-full xl:flex-1 px-5 py-3 bg-transparent border border-neutral-300 dark:border-neutral-700 rounded-full text-sm outline-none focus:border-[#8d6e63] dark:focus:border-[#d7ccc8] transition-all"
+                />
+                <button className="flex items-center justify-center mx-auto min-w-[160px] px-10 py-3 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium tracking-wide text-neutral-600 dark:text-neutral-300 hover:border-[#8d6e63] hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-all duration-300 active:scale-95 antialiased">
+                  Подписаться
+                </button>
+              </form>
+              <p className="text-[10px] text-neutral-500 leading-relaxed max-w-xs">
+                Подписываясь, вы соглашаетесь с политикой конфиденциальности и
+                даёте согласие на получение обновлений.
+              </p>
+            </div>
+          </div>
+          <div className="md:col-span-2 space-y-6">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
+              Открытки
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-2 space-y-6">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
+              Информация
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.info.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-3 space-y-6">
+            <h4 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
+              Следите за нами
+            </h4>
+            <ul className="space-y-4">
+              {footerLinks.social.map((social) => (
+                <li key={social.name}>
+                  <Link
+                    href={social.href}
+                    className="flex items-center gap-3 text-sm text-neutral-600 dark:text-neutral-400 hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-colors group"
+                  >
+                    <social.icon className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    {social.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="pt-8 border-t border-neutral-200 dark:border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs text-neutral-500">
+            © 2026 Paper Whisper. Все права защищены.
+          </p>
+          <div className="flex gap-8 text-xs text-neutral-500">
+            <Link
+              href="/privacy"
+              className="hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
+            >
+              Политика конфиденциальности
+            </Link>
+            <Link
+              href="/terms"
+              className="hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
+            >
+              Условия использования
+            </Link>
+            <Link
+              href="/cookies"
+              className="hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
+            >
+              Настройки cookies
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};

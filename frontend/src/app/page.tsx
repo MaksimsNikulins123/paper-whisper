@@ -1,21 +1,15 @@
-import Header from '@/src/components/layout/Header';
-import Hero from '../components/sections/Hero';
-// import { Features } from '../components/sections/Features';
-import { PromoCards } from '../components/sections/PromoCards';
-import { Values } from '../components/sections/Values';
-import { ProductShowcase } from '../components/sections/ProductShowcase';
-
-// import HeroFirstSection from '@/src/components/sections/HeroFirstSection';
-// import HeroSecondSection from '@/src/components/sections/HeroSecondSection';
-// import { Hero } from "@/components/sections/Hero";
-// import { Features } from "@/components/sections/Features";
-// import { Categories } from "@/components/sections/Categories";
-// import { Reviews } from "@/components/sections/Reviews";
-// import Features from '@/components/sections/Features';
-// import Categories from '@/components/sections/Categories';
-// import Stats from '@/components/sections/Stats';
-// import Testimonials from '@/components/sections/Testimonials';
-// import FAQ from '@/components/sections/FAQ';
+import { Header } from '@/src/components/layout/Header';
+import { Hero } from '@/src/components/sections/Hero';
+import { PromoCards } from '@/src/components/sections/PromoCards';
+import { Values } from '@/src/components/sections/Values';
+import { ProductShowcase } from '@/src/components/sections/ProductShowcase';
+import { Stats } from '@/src/components/sections/Stats';
+import { Reviews } from '@/src/components/sections/Reviews';
+import { CTA } from '@/src/components/sections/CTA';
+import { Newsletter } from '@/src/components/sections/Newsletter';
+import { FAQ } from '@/src/components/sections/FAQ';
+import { Compare } from '@/src/components/sections/Compare';
+import { Footer } from '@/src/components/layout/Foooter';
 
 export default function HomePage() {
   return (
@@ -25,14 +19,13 @@ export default function HomePage() {
       <PromoCards />
       <Values />
       <ProductShowcase />
-      {/* <Features /> */}
-      {/* <HeroFirstSection /> */}
-      {/* <HeroSecondSection /> */}
-      {/* <Features /> */}
-      {/* <Categories /> */}
-      {/* <Stats /> */}
-      {/* <Testimonials /> */}
-      {/* <FAQ /> */}
+      <Stats />
+      <Reviews />
+      <CTA />
+      <Newsletter />
+      <FAQ />
+      <Compare />
+      <Footer />
     </>
   );
 }

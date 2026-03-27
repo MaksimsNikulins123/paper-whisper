@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <section className="w-full bg-[#f7f3ef] dark:bg-black transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -51,5 +51,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
