@@ -31,15 +31,13 @@ export const CTA = () => {
             Explore Catalog
           </Link>
         </div>
-
-        {/* --- ФИНАЛЬНОЕ ИЗОБРАЖЕНИЕ --- */}
         <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-sm overflow-hidden shadow-2xl group">
           <Image
             src="/cta_section/image-1.jpg" // Атмосферное фото: сухая роза на бумаге ручного литья
-            alt="Процесс создания открытки"
+            alt="The process of creating a postcard"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-center transform group-hover:scale-105 transition-transform duration-[2000ms] ease-out"
-            priority
           />
           {/* Мягкий градиент поверх фото */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/5 pointer-events-none" />

@@ -2,22 +2,31 @@ import { Star } from 'lucide-react';
 
 const reviews = [
   {
-    name: 'Иван Петров',
-    role: 'Дизайнер, Москва',
+    id: 1,
+    name: 'Янис',
+    surname: 'Берзиньш',
+    avatar: '/avatars/1.jpg',
+    role: 'Дизайнер, Рига',
     text: '"Открытка пришла такой живой, что я не поверил, что её делал не мой друг. Это настоящее искусство."',
-    avatar: '/avatars/ivan.jpg',
+    createdAt: '2026-04-01T10:00:00Z',
   },
   {
-    name: 'Сергей Волков',
-    role: 'Предприниматель, Санкт-Петербург',
+    id: 2,
+    name: 'Андрей',
+    surname: 'Павлов',
+    avatar: '/avatars/2.jpg',
+    role: 'Предприниматель, Резекне',
     text: '"Заказал для жены на годовщину. Мастер добавил детали, которых я не просил. Это было красиво и неожиданно."',
-    avatar: '/avatars/sergey.jpg',
+    createdAt: '2026-04-02T12:30:00Z',
   },
   {
-    name: 'Мария Сидорова',
-    role: 'Учитель, Казань',
+    id: 3,
+    name: 'Линда',
+    surname: 'Витола',
+    avatar: '/avatars/3.jpg',
+    role: 'Учитель, Лиепая',
     text: '"Впервые вижу открытку, которая выглядит как подарок, а не как печать. Спасибо за это."',
-    avatar: '/avatars/maria.jpg',
+    createdAt: '2026-03-10T09:15:00Z',
   },
 ];
 
@@ -65,10 +74,19 @@ export const Reviews = () => {
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-sm font-semibold tracking-wide text-black dark:text-white">
-                    {review.name}
+                    {review.name + ' ' + review.surname}
                   </span>
                   <span className="text-xs text-neutral-500 font-light mt-0.5">
                     {review.role}
+                  </span>
+                  <span className="text-xs text-neutral-500 font-light mt-0.5">
+                    {review.createdAt
+                      ? new Date(review.createdAt).toLocaleDateString('ru-RU', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })
+                      : ''}
                   </span>
                 </div>
               </div>

@@ -1,0 +1,211 @@
+{
+  "nav": {
+    "catalog": "Catalog",
+    "blog": "Blog",
+    "about": "About Us",
+    "login": "Login",
+    "create": "Customize"
+  },
+  "hero": {
+    "title": "Handcrafted cards — for those who deserve to be amazed.",
+    "subtitle": "Every card is meticulously handcrafted by an artist — made exclusively for you and your loved one. No printing, just authentic materials and genuine care.",
+    "primary_cta": "Customize",
+    "secondary_cta": "Explore Catalog"
+  },
+  "promoCards": {
+    "title": {
+      "part1": "A real greeting isn't something you just pick off a shelf. It’s your words, your photos, and the name of someone you love—",
+      "part2": "brought to life by a master craftsman in just 20 to 60 minutes.",
+      "part3": "Create your custom card now"
+    },
+    "cta": "Add your text, name, date, and photo to make it truly yours.",
+    "features": {
+      "fast": {
+        "title": "Rapid Crafting",
+        "description": "Each card is meticulously handcrafted in 20–60 minutes.",
+        "link": "Learn More"
+      },
+      "delivery": {
+        "title": "Direct-to-Recipient Delivery",
+        "description": "Enter the recipient’s address, and we’ll ship it directly on your behalf.",
+        "link": "Learn More"
+      },
+      "unique": {
+        "title": "Uniqueness in Every Stroke",
+        "description": "No two cards are ever the same. Each one carries the unique touch of the artisan who brought it to life.",
+        "link": "Learn More"
+      }
+    }
+  },
+  "values": {
+    "features": {
+      "handmade": {
+        "title": "Handmade",
+        "description": "It’s more than just aesthetics. It’s the time poured into every detail."
+      },
+      "ours": {
+        "title": "Ours aren’t.",
+        "description": "Укажите адрес получателя — мы отправим напрямую от вашего имени.",
+        "link": "Узнать"
+      },
+      "unique": {
+        "title": "Уникальность в каждом штрихе",
+        "description": "Нет двух одинаковых открыток. Каждая несёт отпечаток рук того, кто её делал.",
+        "link": "Узнать"
+      }
+    },
+    "primary_cta": "Explore Catalog",
+    "secondary_cta": "Customize"
+  },
+  "productShowcase": {
+    "sections": {
+      "ready_cards": {
+        "title": "Ready-to-Ship Cards",
+        "description": "Browse our collection.",
+        "primary_cta": "Explore Catalog"
+      },
+      "custom_cards": {
+        "title": "Custom Cards",
+        "description": "Personalize it all: text, photos, names, and dates.",
+        "primary_cta": "Customize"
+      },
+      "occasions": {
+        "title": "Birthdays, weddings, and sports milestones",
+        "description": "Ten unique designs per category. Plenty of options to find \"the one.\"",
+        "primary_cta": "Explore Catalog"
+      }
+    }
+  },
+  "stats": {
+    "title": "How It Works",
+    "subtitle": "Crafted by hand, every single day. See the magic for yourself.",
+    "sections": {
+      "time": {
+        "value": "30",
+        "unit": "Minutes",
+        "label": "average production time."
+      },
+      "options": {
+        "value": "3",
+        "unit": "Design Options",
+        "label": "curated for every order."
+      },
+      "files": {
+        "value": "Up to 30MB",
+        "unit": "Maximum",
+        "label": "file size for photos."
+      }
+    }
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "subtitle": "Real stories from the heart.",
+    "customers": [
+      {
+        "id": 1,
+        "name": "Janis",
+        "surname": "Berziņš",
+        "text": "This card has so much soul. It feels like something a best friend would make just for you. A true work of art.",
+        "role": "Designer, Riga",
+        "createdAt": "2026-04-01T10:00:00Z"
+      },
+      {
+        "id": 2,
+        "name": "Andrejs",
+        "surname": "Pavlovs",
+        "text": "An anniversary gift for my wife. The creator added extra details that I didn't expect—it was stunning and truly unexpected.",
+        "role": "Entrepreneur, Rezekne",
+        "createdAt": "2026-04-02T12:30:00Z"
+      },
+      {
+        "id": 3,
+        "name": "Linda",
+        "surname": "Vitola",
+        "text": "Finally, a card that feels like a real gift, not just a print. Thank you for such quality.",
+        "role": "Teacher, Liepaja",
+        "createdAt": "2026-03-10T09:15:00Z"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Create Your Card Right Now",
+    "description": "Keep it simple. Choose a design, add your words and photos. Let our creator do the rest.",
+    "primary_cta": "Customize",
+    "secondary_cta": "Explore Catalog"
+  },
+  "newsletter": {
+    "title": "Unique Designs & Stories",
+    "description": "Sign up for updates. Get news on latest designs, sales, and inspiring gifting stories from our community.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe",
+    "privacy_policy": "By clicking the button, you agree to our Terms of Use and Privacy Policy."
+  },
+  "features": {
+    "handmade": "Each card is handcrafted by an artisan",
+    "unique": "A unique design tailored just for you",
+    "delivery": "Send it directly to your recipient",
+    "fast": "Quick and carefully made"
+  },
+  "categories": {
+    "title": "Categories",
+    "birthday": "Birthday",
+    "wedding": "Wedding",
+    "new_baby": "New Baby"
+  },
+  "builder": {
+    "title": "Create Your Card",
+    "your_text": "Your Message",
+    "name": "Name",
+    "date": "Date",
+    "upload_photo": "Upload Photo",
+    "generate": "Generate Designs",
+    "generate_more": "Generate More",
+    "select": "Select This Design",
+    "preview_hint": "We’ll generate unique handmade-style designs for you",
+    "loading": "Creating your designs..."
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "checkout": "Proceed to Checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "delivery": "Shipping",
+    "address": "Shipping Address",
+    "total": "Total",
+    "place_order": "Place Order"
+  },
+  "delivery": {
+    "title": "Shipping",
+    "tracking": "Tracking included",
+    "insurance": "Insured delivery"
+  },
+  "orders": {
+    "title": "My Orders",
+    "details": "Order Details"
+  },
+  "admin": {
+    "orders": "Orders",
+    "queue": "Production Queue",
+    "generate_pdf": "Generate PDF",
+    "templates": "Templates"
+  },
+  "blog": {
+    "title": "Stories",
+    "read_more": "Read more"
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": "How is the card made?",
+    "a1": "Each card is carefully handcrafted by an artisan.",
+    "q2": "Can I upload my own photo?",
+    "a2": "Yes, you can upload an image up to 30MB.",
+    "q3": "How long does it take?",
+    "a3": "Usually between 20 and 60 minutes."
+  },
+  "contact": {
+    "title": "Contact",
+    "send": "Send Message"
+  }
+}
