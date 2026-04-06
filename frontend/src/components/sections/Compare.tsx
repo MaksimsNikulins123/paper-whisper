@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Check, X, ChevronRight } from 'lucide-react';
 
 const comparisonData = [
-  { feature: 'Персонализация', ready: 'Нет', custom: 'Да' },
+  { feature: 'Персонализация', ready: false, custom: true },
   { feature: 'Время изготовления', ready: true, custom: true },
   { feature: 'Загрузка фото', ready: false, custom: true },
   { feature: 'Выбор дизайна', ready: true, custom: true },

@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { useSyncExternalStore } from 'react';
 
@@ -6,37 +6,33 @@ type Lang = 'en' | 'ru';
 
 const STORAGE_KEY = 'lang';
 
-// --- Функция получения значения для клиента ---
+// --- Get Lang value ---
 function getSnapshot(): Lang {
   if (typeof window === 'undefined') return 'en';
 
   const stored = localStorage.getItem(STORAGE_KEY);
-  // Если в хранилище ничего нет или там 'en', возвращаем 'en'
   if (stored === 'ru') return 'ru';
   return 'en';
 }
 
-// --- Подписка на изменения localStorage между вкладками ---
+// --- Subscribe on changes in localStorage ---
 function subscribe(callback: () => void) {
   window.addEventListener('storage', callback);
   return () => window.removeEventListener('storage', callback);
 }
 
-// --- Хук ---
+// --- HOOK ---
 function useLanguage(): [Lang, (lang: Lang) => void] {
-  // Третий аргумент () => 'en' критически важен: это значение для серверного рендеринга
   const lang = useSyncExternalStore<Lang>(subscribe, getSnapshot, () => 'en');
-
   const setLang = (newLang: Lang) => {
     localStorage.setItem(STORAGE_KEY, newLang);
-    // Инициируем событие вручную, чтобы хук обновился в пределах текущей вкладки
     window.dispatchEvent(new Event('storage'));
   };
 
   return [lang, setLang];
 }
 
-// --- Компонент переключателя ---
+// --- Language switcher component ---
 export default function LanguageSwitcher() {
   const [lang, setLang] = useLanguage();
 

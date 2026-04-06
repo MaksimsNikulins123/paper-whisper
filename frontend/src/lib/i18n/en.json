@@ -1,13 +1,18 @@
 {
-  "nav": {
-    "catalog": "Catalog",
-    "blog": "Blog",
-    "about": "About Us",
-    "login": "Login",
-    "create": "Customize"
+  "header": {
+    "nav": {
+      "catalog": "Catalog",
+      "blog": "Blog",
+      "about": "About Us",
+      "login": "Login",
+      "create": "Customize"
+    }
   },
   "hero": {
-    "title": "Handcrafted cards — for those who deserve to be amazed.",
+    "title": {
+      "part1": "Handcrafted cards —",
+      "part2": "for those who deserve to be amazed."
+    },
     "subtitle": "Every card is meticulously handcrafted by an artist — made exclusively for you and your loved one. No printing, just authentic materials and genuine care.",
     "primary_cta": "Customize",
     "secondary_cta": "Explore Catalog"
@@ -140,72 +145,187 @@
     "button": "Subscribe",
     "privacy_policy": "By clicking the button, you agree to our Terms of Use and Privacy Policy."
   },
-  "features": {
-    "handmade": "Each card is handcrafted by an artisan",
-    "unique": "A unique design tailored just for you",
-    "delivery": "Send it directly to your recipient",
-    "fast": "Quick and carefully made"
-  },
-  "categories": {
-    "title": "Categories",
-    "birthday": "Birthday",
-    "wedding": "Wedding",
-    "new_baby": "New Baby"
-  },
-  "builder": {
-    "title": "Create Your Card",
-    "your_text": "Your Message",
-    "name": "Name",
-    "date": "Date",
-    "upload_photo": "Upload Photo",
-    "generate": "Generate Designs",
-    "generate_more": "Generate More",
-    "select": "Select This Design",
-    "preview_hint": "We’ll generate unique handmade-style designs for you",
-    "loading": "Creating your designs..."
-  },
-  "cart": {
-    "title": "Cart",
-    "empty": "Your cart is empty",
-    "checkout": "Proceed to Checkout"
-  },
-  "checkout": {
-    "title": "Checkout",
-    "delivery": "Shipping",
-    "address": "Shipping Address",
-    "total": "Total",
-    "place_order": "Place Order"
-  },
-  "delivery": {
-    "title": "Shipping",
-    "tracking": "Tracking included",
-    "insurance": "Insured delivery"
-  },
-  "orders": {
-    "title": "My Orders",
-    "details": "Order Details"
-  },
-  "admin": {
-    "orders": "Orders",
-    "queue": "Production Queue",
-    "generate_pdf": "Generate PDF",
-    "templates": "Templates"
-  },
-  "blog": {
-    "title": "Stories",
-    "read_more": "Read more"
-  },
-  "faq": {
+  "questions": {
     "title": "FAQ",
-    "q1": "How is the card made?",
-    "a1": "Each card is carefully handcrafted by an artisan.",
-    "q2": "Can I upload my own photo?",
-    "a2": "Yes, you can upload an image up to 30MB.",
-    "q3": "How long does it take?",
-    "a3": "Usually between 20 and 60 minutes."
+    "subtitle": "Everything you need to know.",
+    "items": {
+      "time": {
+        "question": "How long to craft a card?",
+        "answer": "It takes twenty minutes to prepare a standard card and forty for a personalized one, since every piece is made by hand. If we’re extra busy, your card might wait its turn in line, but the high quality remains our top priority."
+      },
+      "shipping": {
+        "question": "How do I send it to a recipient?",
+        "answer": "Cards travel straight to your recipient’s door. Simply select your preferred shipping method at checkout. We provide tracking and insurance for every order. Should anything get lost, we’ll craft a new one at no extra cost."
+      },
+      "satisfaction": {
+        "question": "What if I don't like the card",
+        "answer": "We offer free redos. If you're unhappy with the result, our master will craft a fresh version for you. This policy is always in effect, except in cases of fraud or where no proof of the issue is provided."
+      },
+      "photos": {
+        "question": "What kind of photos can I upload?",
+        "answer": "JPG or PNG up to 30MB. You must confirm that you own the photo or have the rights to use it. The system will automatically verify the file size and format."
+      },
+      "designs": {
+        "question": "How many design options are there?",
+        "answer": "There are three options to choose from. If none of them fit, you can generate three more. They will be added to the list so you can pick the best one."
+      }
+    },
+    "cta": {
+      "title": "Still have questions?",
+      "subtitle": "Get in touch with us, and we'll get back to you.",
+      "button": "Send a message"
+    }
   },
-  "contact": {
-    "title": "Contact",
-    "send": "Send Message"
+    "compare": {
+      "title": "Compare Services",
+      "options": {
+        "ready": "Ready-made",
+        "custom": "Custom"
+      },
+      "features": [
+        {
+          "id": "1",
+          "title": "Personalization",
+          "values": 
+          {
+            "ready": false,
+            "custom": true
+          }
+        },
+        {
+          "id": "2",
+          "title": "Production Time",
+          "values": 
+          {
+            "ready": true,
+            "custom": true
+          }
+        },
+        {
+          "id": "3",
+          "title": "Photo Upload",
+          "values": 
+          {
+            "ready": false,
+            "custom": true
+          }
+        },
+        {
+          "id": "4",
+          "title": "Design Selection",
+          "values": 
+          {
+            "ready": true,
+            "custom": true
+          }
+        },
+        {
+          "id": "5",
+          "title": "Delivery",
+          "values": 
+          {
+            "ready": true,
+            "custom": true
+          }
+        }
+    ],
+    "primary_cta": "Explore Catalog",
+    "secondary_cta": "Customize"      
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Stay updated on new designs and offers.",
+      "placeholder": "Email address",
+      "button": "Subscribe",
+      "disclaimer": "By subscribing, you agree to our Privacy Policy and consent to receive updates."
+    },
+    "columns": {
+      "cards": {
+        "title": "Cards",
+        "products": [
+          { 
+            "name": "Catalog",
+            "href": "/catalog" 
+          },
+          { 
+            "name": "Constructor",
+            "href": "/constructor" 
+          },
+          { 
+            "name": "About us",
+            "href": "/aboutUs" 
+          },
+          { 
+            "name": "Contacts",
+            "href": "/contacts" 
+          },
+          { 
+            "name": "Help",
+            "href": "/help" 
+          }
+      ]
+    },
+     "info": {
+        "title": "Information",
+        "products": [
+          { 
+            "name": "Blog",
+            "href": "/blog" 
+          },
+          { 
+            "name": "FAQ",
+            "href": "/faq" 
+          },
+          { 
+            "name": "Shipping",
+            "href": "/shipping" 
+          },
+          { 
+            "name": "Returns",
+            "href": "/returns" 
+          },
+          { 
+            "name": "Warranty",
+            "href": "/warranty" 
+          }
+        ]
+      },
+      "social": {
+        "title": "Follow us",
+        "products": [
+          { 
+            "name": "Facebook",
+            "href": "#",
+            "icon": "SiFacebook"
+          },
+          { 
+            "name": "Instagram",
+            "href": "#",
+            "icon": "SiInstagram" 
+          },
+          { 
+            "name": "X",
+            "href": "#",
+            "icon": "SiX" 
+          },
+          { 
+            "name": "LinkedIn",
+            "href": "#",
+            "icon": "SiLinkerd" 
+          },
+          { 
+            "name": "YouTube",
+            "href": "#",
+            "icon": "SiYoutube" 
+          }
+        ]
+      }
+    },
+    "bottom": {
+      "copyright": "© 2026 Paper Whisper. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "cookies": "Cookie Settings"
+    }
   }
 }

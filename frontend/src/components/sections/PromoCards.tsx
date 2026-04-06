@@ -1,11 +1,16 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/components/ui/providers';
+
 
 const promoCards = [
   {
     title: 'Быстрое изготовление',
     desc: 'Мастера создают каждую открытку вручную за 20-60 минут.',
+    alt: "Rapid Crafting",
     img: '/promo_section/image-1.jpg',
     href: '/catalog',
   },
@@ -23,25 +28,27 @@ const promoCards = [
   },
 ];
 
-export const PromoCards = () => (
-  <section className="w-full bg-[#f7f3ef] dark:bg-black transition-colors duration-300">
-    <div className="max-w-6xl mx-auto px-6 py-20 md:py-32 flex flex-col items-center">
-      <div className="text-center max-w-4xl mb-20 md:mb-28">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-black dark:text-white mb-6 max-w-lg">
-          Настоящее поздравление — это не открытка из магазина. Это ваши слова,
-          ваше фото и имя близкого человека —
+export const PromoCards = () => {
+
+  const { t } = useTranslation();
+
+  return (
+    <section className="w-full bg-[#f7f3ef] dark:bg-black transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-6 py-20 md:py-32 flex flex-col items-center">
+        <div className="text-center max-w-4xl mb-20 md:mb-28">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight text-black dark:text-white mb-6 max-w-lg">
+          {t("promoCards.title.part1")}
           <span className="italic text-neutral-400">
             {' '}
-            воплощённые руками мастера за 20–60 минут.
+            {t("promoCards.title.part2")}
           </span>
           <span className="text-neutral-600">
             {' '}
-            Соберите свою открытку прямо сейчас
+            {t("promoCards.title.part3")}
           </span>
         </h2>
         <p className="text-sm md:text-base text-neutral-600 font-light tracking-wide max-w-xl mx-auto">
-          Добавьте текст, имя, дату и фото — открытка станет по-настоящему
-          вашей.
+          {t("promoCards.cta")}
         </p>
       </div>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -77,4 +84,5 @@ export const PromoCards = () => (
       </div>
     </div>
   </section>
-);
+) 
+};
