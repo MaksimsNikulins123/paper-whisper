@@ -73,8 +73,6 @@ const promoCards = [
 
 export const PromoCards = () => {
 
-  console.log(promoCards)
-
   const { t, lang } = useTranslation();
 
   return (

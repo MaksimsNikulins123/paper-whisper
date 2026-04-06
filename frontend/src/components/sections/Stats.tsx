@@ -1,34 +1,70 @@
+"use client";
+
 import Image from 'next/image';
+import { useTranslation } from '../ui/providers';
 
 const stats = [
   {
-    value: '30',
-    unit: 'Минут',
-    desc: 'среднее время изготовления открытки',
+    id: 1,
+    title: {
+      ru: '30',
+      en: '30'
+    },
+    subtitle: {
+      ru: 'Минут',
+      en: 'Minutes'
+    },
+    desc: {
+      ru: 'среднее время изготовления открытки',
+      en: 'average production time.'
+    } 
   },
   {
-    value: '3',
-    unit: 'Варианта дизайна',
-    desc: 'предлагаем на выбор для каждого заказа',
+    id: 2,
+    title: {
+      ru: '3',
+      en: '3'
+    },
+    subtitle: {
+      ru: 'Варианта дизайна',
+      en: 'Design Options'
+    },
+    desc: {
+      ru: 'предлагаем на выбор для каждого заказа',
+      en: 'curated for every order.'
+    }
   },
   {
-    value: 'До 30МВ',
-    unit: 'Максимальный',
-    desc: 'размер загружаемого фото',
+    id: 3,
+    title: {
+      ru: 'До 30МВ',
+      en: 'Up to 30MB'
+    },
+    subtitle: {
+      ru: 'Максимальный',
+      en: 'Maximum'
+    },
+    desc: {
+      ru: 'размер загружаемого фото',
+      en: 'file size for photos.'
+    }
   },
 ];
 
 export const Stats = () => {
+
+  const { t, lang } = useTranslation();
+
   return (
     <section className="w-full bg-[#f7f3ef] dark:bg-black py-20 md:py-32 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16 md:mb-20 text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-serif font-medium leading-tight text-black dark:text-white antialiased">
-            Что мы делаем
+            {t('stats.title')}
           </h2>
           <div className="w-12 h-[1px] bg-[#8d6e63] my-6" />{' '}
           <p className="text-neutral-600 dark:text-neutral-400 font-light max-w-xl leading-relaxed">
-            Каждый день мастера создают открытки. Вот что получается.
+            {t('stats.subtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
@@ -39,13 +75,13 @@ export const Stats = () => {
                 className="flex-1 p-8 border border-neutral-300 dark:border-neutral-800 rounded-sm bg-white/50 dark:bg-neutral-900/50 hover:border-[#8d6e63] dark:hover:border-[#d7ccc8] transition-all duration-500 group flex flex-col justify-center"
               >
                 <span className="text-5xl md:text-6xl font-serif font-bold text-black dark:text-white leading-none antialiased group-hover:text-[#8d6e63] transition-colors duration-500">
-                  {item.value}
+                  {item.title[lang]}
                 </span>
                 <span className="mt-4 text-sm font-semibold text-black dark:text-white uppercase tracking-[0.2em]">
-                  {item.unit}
+                  {item.subtitle[lang]}
                 </span>
                 <p className="mt-2 text-xs md:text-sm text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-[240px]">
-                  {item.desc}
+                  {item.desc[lang]}
                 </p>
               </div>
             ))}

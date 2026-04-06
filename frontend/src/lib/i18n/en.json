@@ -23,84 +23,18 @@
       "part2": "brought to life by a master craftsman in just 20 to 60 minutes.",
       "part3": "Create your custom card now"
     },
-    "cta": "Add your text, name, date, and photo to make it truly yours.",
-    "features": {
-      "fast": {
-        "title": "Rapid Crafting",
-        "description": "Each card is meticulously handcrafted in 20–60 minutes.",
-        "link": "Learn More"
-      },
-      "delivery": {
-        "title": "Direct-to-Recipient Delivery",
-        "description": "Enter the recipient’s address, and we’ll ship it directly on your behalf.",
-        "link": "Learn More"
-      },
-      "unique": {
-        "title": "Uniqueness in Every Stroke",
-        "description": "No two cards are ever the same. Each one carries the unique touch of the artisan who brought it to life.",
-        "link": "Learn More"
-      }
-    }
+    "cta": "Add your text, name, date, and photo to make it truly yours."
   },
   "values": {
-    "features": {
-      "handmade": {
-        "title": "Handmade",
-        "description": "It’s more than just aesthetics. It’s the time poured into every detail."
-      },
-      "ours": {
-        "title": "Ours aren’t.",
-        "description": "Укажите адрес получателя — мы отправим напрямую от вашего имени.",
-        "link": "Узнать"
-      },
-      "unique": {
-        "title": "Уникальность в каждом штрихе",
-        "description": "Нет двух одинаковых открыток. Каждая несёт отпечаток рук того, кто её делал.",
-        "link": "Узнать"
-      }
-    },
     "primary_cta": "Explore Catalog",
     "secondary_cta": "Customize"
   },
   "productShowcase": {
-    "sections": {
-      "ready_cards": {
-        "title": "Ready-to-Ship Cards",
-        "description": "Browse our collection.",
-        "primary_cta": "Explore Catalog"
-      },
-      "custom_cards": {
-        "title": "Custom Cards",
-        "description": "Personalize it all: text, photos, names, and dates.",
-        "primary_cta": "Customize"
-      },
-      "occasions": {
-        "title": "Birthdays, weddings, and sports milestones",
-        "description": "Ten unique designs per category. Plenty of options to find \"the one.\"",
-        "primary_cta": "Explore Catalog"
-      }
-    }
+
   },
   "stats": {
     "title": "How It Works",
-    "subtitle": "Crafted by hand, every single day. See the magic for yourself.",
-    "sections": {
-      "time": {
-        "value": "30",
-        "unit": "Minutes",
-        "label": "average production time."
-      },
-      "options": {
-        "value": "3",
-        "unit": "Design Options",
-        "label": "curated for every order."
-      },
-      "files": {
-        "value": "Up to 30MB",
-        "unit": "Maximum",
-        "label": "file size for photos."
-      }
-    }
+    "subtitle": "Crafted by hand, every single day. See the magic for yourself."
   },
   "reviews": {
     "title": "Customer Reviews",
