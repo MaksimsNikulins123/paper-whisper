@@ -6,7 +6,7 @@ type Join<K, P> = K extends string
 
 type Prev = [never, 0, 1, 2, 3, 4, 5];
 
-export type Dict = Record<string, unknown>;
+// export type Dict = Record<string, unknown>;
 
 export type Paths<T, D extends number = 5> = [D] extends [never]
   ? never
@@ -19,3 +19,13 @@ export type Paths<T, D extends number = 5> = [D] extends [never]
         : never;
     }[keyof T]
   : "";
+
+// type Lang = "ru" | "en";
+
+// type PromoCard = {
+//   title: Record<Lang, string>;
+//   desc: Record<Lang, string>;
+//   alt: Record<Lang, string>;
+//   img: string;
+//   href: string;
+// };

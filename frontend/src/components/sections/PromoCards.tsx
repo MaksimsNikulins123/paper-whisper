@@ -5,32 +5,77 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/components/ui/providers';
 
-
 const promoCards = [
   {
-    title: 'Быстрое изготовление',
-    desc: 'Мастера создают каждую открытку вручную за 20-60 минут.',
-    alt: "Rapid Crafting",
+    id: 1,
+    title: {
+      ru: 'Быстрое изготовление',
+      en: 'Fast production',
+    },
+    desc: {
+      ru: 'Мастера создают каждую открытку вручную за 20-60 минут.',
+      en: 'Each card is handmade in 20–60 minutes.',
+    },
+    alt: {
+      ru: 'Быстрое изготовление',
+      en: 'Rapid Crafting',
+    },
     img: '/promo_section/image-1.jpg',
     href: '/catalog',
+    link: {
+      ru: 'Узнать',
+      en: 'Learn More'
+    }
   },
   {
-    title: 'Доставка адресату',
-    desc: 'Укажите адрес получателя — мы отправим напрямую от вашего имени.',
+    id: 2,
+    title: {
+      ru: 'Доставка адресату',
+      en: 'Direct delivery',
+    },
+    desc: {
+      ru: 'Укажите адрес получателя — мы отправим напрямую от вашего имени.',
+      en: 'Provide recipient address — we send it for you.',
+    },
+    alt: {
+      ru: 'Доставка адресату',
+      en: 'Direct-to-Recipient Delivery',
+    },
     img: '/promo_section/image-2.jpg',
     href: '/catalog',
+     link: {
+      ru: 'Узнать',
+      en: 'Learn More'
+    }
   },
   {
-    title: 'Уникальность в каждом штрихе',
-    desc: 'Нет двух одинаковых открыток. Каждая несёт отпечаток рук того, кто её делал.',
+    id: 3,
+    title: {
+      ru: 'Уникальность в каждом штрихе',
+      en: 'Unique design',
+    },
+    desc: {
+      ru: 'Нет двух одинаковых открыток. Каждая несёт отпечаток рук того, кто её делал.',
+      en: 'No two cards are the same.',
+    },
+    alt: {
+      ru: 'Уникальность',
+      en: 'Uniqueness in Every Stroke',
+    },
     img: '/promo_section/image-3.jpg',
     href: '/catalog',
+     link: {
+      ru: 'Узнать',
+      en: 'Learn More'
+    }
   },
 ];
 
 export const PromoCards = () => {
 
-  const { t } = useTranslation();
+  console.log(promoCards)
+
+  const { t, lang } = useTranslation();
 
   return (
     <section className="w-full bg-[#f7f3ef] dark:bg-black transition-colors duration-300">
@@ -60,7 +105,7 @@ export const PromoCards = () => {
           >
             <Image
               src={card.img}
-              alt={card.title}
+              alt={card.title[lang]}
               fill
               className="object-cover group-hover:scale-110 transition-transform duration-700"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -68,13 +113,13 @@ export const PromoCards = () => {
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
               <h3 className="text-2xl font-serif font-medium text-white mb-3 max-w-[80%]leading-tight">
-                {card.title}
+                {card.title[lang]}
               </h3>
               <p className="text-sm text-neutral-300 font-light leading-relaxed max-h-0 group-hover:max-h-24 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 overflow-hidden">
-                {card.desc}
+                {card.desc[lang]}
               </p>
               <div className="mt-6 flex items-center gap-2 text-sm text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                <span>Узнать</span>
+                <span>{card.link[lang]}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
