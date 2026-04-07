@@ -2,36 +2,63 @@
 
 import { useState } from 'react';
 import { ChevronUp } from 'lucide-react';
+import { useTranslation } from '../ui/providers';
 
 const faqs = [
   {
-    question: 'Сколько времени на открытку?',
-    answer:
-      'Стандартная открытка готова за двадцать минут. Персонализированная требует сорок минут, потому что каждая уникальна и делается вручную. Если заказов много, открытка встанет в очередь, но качество не пострадает.',
+    question: {
+      ru: 'Сколько времени на открытку?',
+      en: 'How long to craft a card?',
+    },
+    answer: {
+      ru: 'Стандартная открытка готова за двадцать минут. Персонализированная требует сорок минут, потому что каждая уникальна и делается вручную. Если заказов много, открытка встанет в очередь, но качество не пострадает.',
+      en: 'It takes twenty minutes to prepare a standard card and forty for a personalized one, since every piece is made by hand. If we’re extra busy, your card might wait its turn in line, but the high quality remains our top priority.',
+    },
   },
   {
-    question: 'Как отправить получателю?',
-    answer:
-      'Открытка идёт прямо адресату. Выбираете почту или курьера при оформлении. Можно отследить доставку и застраховать посылку. Если потеряется, мы переделаем открытку бесплатно.',
+    question: {
+      ru: 'Как отправить получателю?',
+      en: 'How do I send it to a recipient?',
+    },
+    answer: {
+      ru: 'Открытка идёт прямо адресату. Выбираете почту или курьера при оформлении. Можно отследить доставку и застраховать посылку. Если потеряется, мы переделаем открытку бесплатно.',
+      en: 'Cards travel straight to your recipient’s door. Simply select your preferred shipping method at checkout. We provide tracking and insurance for every order. Should anything get lost, we’ll craft a new one at no extra cost.',
+    },
   },
   {
-    question: 'Что если открытка не понравится?',
-    answer:
-      'Переделаем бесплатно. Если вы недовольны, мастер создаст новую. Это работает всегда, кроме случаев мошенничества или когда нет доказательств проблемы.',
+    question: {
+      ru: 'Что если открытка не понравится?',
+      en: "What if I don't like the card?",
+    },
+    answer: {
+      ru: 'Переделаем бесплатно. Если вы недовольны, мастер создаст новую. Это работает всегда, кроме случаев мошенничества или когда нет доказательств проблемы.',
+      en: "We offer free redos. If you're unhappy with the result, our master will craft a fresh version for you. This policy is always in effect, except in cases of fraud or where no proof of the issue is provided.",
+    },
   },
   {
-    question: 'Какие фото можно загружать?',
-    answer:
-      'JPG или PNG до тридцати мегабайт. Нужно подтвердить, что это ваше фото или у вас есть право его использовать. Система проверит размер и формат автоматически.',
+    question: {
+      ru: 'Какие фото можно загружать?',
+      en: 'What kind of photos can I upload?',
+    },
+    answer: {
+      ru: 'JPG или PNG до тридцати мегабайт. Нужно подтвердить, что это ваше фото или у вас есть право его использовать. Система проверит размер и формат автоматически.',
+      en: 'JPG or PNG up to 30MB. You must confirm that you own the photo or have the rights to use it. The system will automatically verify the file size and format.',
+    },
   },
   {
-    question: 'Сколько вариантов дизайна?',
-    answer:
-      'Система генерирует три варианта. Если ни один не подходит, можно сгенерировать ещё три. Они добавятся к списку, и вы выберете лучший.',
+    question: {
+      ru: 'Сколько вариантов дизайна?',
+      en: 'How many design options are there?',
+    },
+    answer: {
+      ru: 'На выбор есть  три варианта. Если ни один не подходит, можно сгенерировать ещё три. Они добавятся к списку, и вы выберете лучший.',
+      en: 'There are three options to choose from. If none of them fit, you can generate three more. They will be added to the list so you can pick the best one.',
+    },
   },
 ];
 
 export const FAQ = () => {
+  const { t, lang } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(0); // Первый открыт по умолчанию
 
   return (
@@ -39,10 +66,10 @@ export const FAQ = () => {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-serif font-medium text-black dark:text-white mb-6">
-            Вопросы
+            {t('questions.title')}
           </h2>
           <p className="text-neutral-500 dark:text-neutral-400 font-light">
-            Ответы на то, что волнует больше всего.
+            {t('questions.subtitle')}
           </p>
         </div>
         <div className="border-t border-neutral-300 dark:border-neutral-800">
@@ -56,7 +83,7 @@ export const FAQ = () => {
                 className="w-full py-8 flex items-center justify-between text-left group"
               >
                 <span className="text-lg md:text-xl font-medium text-black dark:text-white transition-colors group-hover:text-neutral-600 dark:group-hover:text-neutral-300">
-                  {faq.question}
+                  {faq.question[lang]}
                 </span>
                 <ChevronUp
                   className={`w-5 h-5 text-neutral-400 transition-transform duration-300 ${
@@ -71,7 +98,7 @@ export const FAQ = () => {
                 }`}
               >
                 <p className="text-neutral-600 dark:text-neutral-400 font-light leading-relaxed max-w-2xl">
-                  {faq.answer}
+                  {faq.answer[lang]}
                 </p>
               </div>
             </div>
@@ -79,13 +106,13 @@ export const FAQ = () => {
         </div>
         <div className="mt-24 md:mt-32 text-center">
           <h3 className="text-3xl md:text-4xl font-serif font-medium text-black dark:text-white mb-8">
-            Остались вопросы?
+            {t('questions.cta.title')}
           </h3>
           <p className="text-neutral-500 dark:text-neutral-400 font-light mb-10">
-            Напишите нам, и мы ответим.
+            {t('questions.cta.subtitle')}
           </p>
           <button className="flex items-center justify-center mx-auto min-w-[160px] px-10 py-3 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium tracking-wide text-neutral-600 dark:text-neutral-300 hover:border-[#8d6e63] hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-all duration-300 active:scale-95 antialiased">
-            Написать
+            {t('questions.cta.button')}
           </button>
         </div>
       </div>

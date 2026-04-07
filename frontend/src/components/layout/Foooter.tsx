@@ -13,21 +13,92 @@ import {
   SiLinkerd,
   SiYoutube,
 } from '@icons-pack/react-simple-icons';
+import { useTranslation } from '../ui/providers';
 
 const footerLinks = {
   products: [
-    { name: 'Каталог', href: '/catalog' },
-    { name: 'Конструктор', href: '/constructor' },
-    { name: 'О нас', href: '/about' },
-    { name: 'Контакты', href: '/contacts' },
-    { name: 'Помощь', href: '/help' },
+    {
+      id: 1,
+      name: {
+        ru: 'Каталог',
+        en: 'Catalog',
+      },
+      href: '/catalog',
+    },
+    {
+      id: 2,
+      name: {
+        ru: 'Конструктор',
+        en: 'Constructor',
+      },
+      href: '/constructor',
+    },
+    {
+      id: 3,
+      name: {
+        ru: 'О нас',
+        en: 'About Us',
+      },
+      href: '/about',
+    },
+    {
+      id: 4,
+      name: {
+        ru: 'Контакты',
+        en: 'Contacts',
+      },
+      href: '/contacts',
+    },
+    {
+      id: 5,
+      name: {
+        ru: 'Помощь',
+        en: 'Help',
+      },
+      href: '/help',
+    },
   ],
   info: [
-    { name: 'Блог', href: '/blog' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Доставка', href: '/shipping' },
-    { name: 'Возвраты', href: '/returns' },
-    { name: 'Гарантия', href: '/warranty' },
+    {
+      id: 1,
+      name: {
+        ru: 'Блог',
+        en: 'Blog',
+      },
+      href: '/blog',
+    },
+    {
+      id: 2,
+      name: {
+        ru: 'FAQ',
+        en: 'FAQ',
+      },
+      href: '/faq',
+    },
+    {
+      id: 3,
+      name: {
+        ru: 'Доставка',
+        en: 'Shipping',
+      },
+      href: '/shipping',
+    },
+    {
+      id: 4,
+      name: {
+        ru: 'Возвраты',
+        en: 'Returns',
+      },
+      href: '/returns',
+    },
+    {
+      id: 5,
+      name: {
+        ru: 'Гарантия',
+        en: 'Warranty',
+      },
+      href: '/warranty',
+    },
   ],
   social: [
     { name: 'Facebook', href: '#', icon: SiFacebook },
@@ -39,6 +110,7 @@ const footerLinks = {
 };
 
 export const Footer = () => {
+  const { t, lang } = useTranslation();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<
     'idle' | 'loading' | 'success' | 'error'
@@ -81,7 +153,7 @@ export const Footer = () => {
             </Link>
             <div className="space-y-4">
               <p className="text-neutral-800 dark:text-neutral-200 font-medium">
-                Получайте новости о свежих дизайнах и скидках.
+                {t('footer.newsletter.title')}
               </p>
               <form
                 onSubmit={handleSubscribe}
@@ -92,7 +164,7 @@ export const Footer = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Ваша почта"
+                  placeholder={t('footer.newsletter.placeholder')}
                   className="w-full xl:flex-1 px-5 py-3 bg-transparent border border-neutral-300 dark:border-neutral-700 rounded-full text-sm outline-none focus:border-[#8d6e63] dark:focus:border-[#d7ccc8] transition-all"
                 />
                 <button
@@ -100,32 +172,33 @@ export const Footer = () => {
                   disabled={status === 'loading'}
                   className="flex items-center justify-center mx-auto min-w-[160px] px-10 py-3 border border-neutral-300 dark:border-neutral-700 rounded-full text-sm font-medium tracking-wide text-neutral-600 dark:text-neutral-300 hover:border-[#8d6e63] hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-all duration-300 active:scale-95 antialiased"
                 >
-                  {status === 'loading' ? 'Отправка...' : 'Подписаться'}
+                  {status === 'loading'
+                    ? `${t('footer.newsletter.status.sending')}`
+                    : `${t('footer.newsletter.status.subscribe')}`}
                 </button>
               </form>
               {status === 'success' && (
                 <p className="text-[10px] text-neutral-500 leading-relaxed max-w-xs">
-                  Вы успешно подписаны!
+                  {t('footer.newsletter.status.success')}
                 </p>
               )}
               <p className="text-[10px] text-neutral-500 leading-relaxed max-w-xs">
-                Подписываясь, вы соглашаетесь с политикой конфиденциальности и
-                даёте согласие на получение обновлений.
+                {t('footer.newsletter.disclaimer')}
               </p>
             </div>
           </div>
           <div className="md:col-span-2 space-y-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
-              Открытки
+              {t('footer.columns.cards.title')}
             </h4>
             <ul className="space-y-4">
               {footerLinks.products.map((link) => (
-                <li key={link.name}>
+                <li key={link.name[lang]}>
                   <Link
                     href={link.href}
                     className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-colors"
                   >
-                    {link.name}
+                    {link.name[lang]}
                   </Link>
                 </li>
               ))}
@@ -134,16 +207,16 @@ export const Footer = () => {
 
           <div className="md:col-span-2 space-y-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
-              Информация
+              {t('footer.columns.info.title')}
             </h4>
             <ul className="space-y-4">
               {footerLinks.info.map((link) => (
-                <li key={link.name}>
+                <li key={link.name[lang]}>
                   <Link
                     href={link.href}
                     className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-[#8d6e63] dark:hover:text-[#d7ccc8] transition-colors"
                   >
-                    {link.name}
+                    {link.name[lang]}
                   </Link>
                 </li>
               ))}
@@ -151,7 +224,7 @@ export const Footer = () => {
           </div>
           <div className="md:col-span-3 space-y-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-black dark:text-white">
-              Следите за нами
+              {t('footer.columns.social.title')}
             </h4>
             <ul className="space-y-4">
               {footerLinks.social.map((social) => (

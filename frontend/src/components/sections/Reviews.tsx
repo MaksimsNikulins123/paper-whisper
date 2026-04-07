@@ -1,45 +1,86 @@
+'use client';
+
 import { Star } from 'lucide-react';
+import { useTranslation } from '../ui/providers';
 
 const reviews = [
   {
     id: 1,
-    name: 'Янис',
-    surname: 'Берзиньш',
+    name: {
+      ru: 'Янис',
+      en: 'Janis',
+    },
+    surname: {
+      ru: 'Берзиньш',
+      en: 'Berzins',
+    },
     avatar: '/avatars/1.jpg',
-    role: 'Дизайнер, Рига',
-    text: '"Открытка пришла такой живой, что я не поверил, что её делал не мой друг. Это настоящее искусство."',
+    role: {
+      ru: 'Дизайнер, Рига',
+      en: 'Designer, Riga',
+    },
+    text: {
+      ru: '"Открытка пришла такой живой, что я не поверил, что её делал не мой друг. Это настоящее искусство."',
+      en: '"This card has so much soul. It feels like something a best friend would make just for you. A true work of art."',
+    },
     createdAt: '2026-04-01T10:00:00Z',
   },
   {
     id: 2,
-    name: 'Андрей',
-    surname: 'Павлов',
+    name: {
+      ru: 'Андрей',
+      en: 'Andrei',
+    },
+    surname: {
+      ru: 'Павлов',
+      en: 'Pavlov',
+    },
     avatar: '/avatars/2.jpg',
-    role: 'Предприниматель, Резекне',
-    text: '"Заказал для жены на годовщину. Мастер добавил детали, которых я не просил. Это было красиво и неожиданно."',
+    role: {
+      ru: 'Предприниматель, Резекне',
+      en: 'Entrepreneur, Rezekne',
+    },
+    text: {
+      ru: '"Заказал для жены на годовщину. Мастер добавил детали, которых я не просил. Это было красиво и неожиданно."',
+      en: '"An anniversary gift for my wife. The creator added extra details that I didn\'t expect—it was stunning and truly unexpected."',
+    },
     createdAt: '2026-04-02T12:30:00Z',
   },
   {
     id: 3,
-    name: 'Линда',
-    surname: 'Витола',
+    name: {
+      ru: 'Линда',
+      en: 'Linda',
+    },
+    surname: {
+      ru: 'Витола',
+      en: 'Vitolа',
+    },
     avatar: '/avatars/3.jpg',
-    role: 'Учитель, Лиепая',
-    text: '"Впервые вижу открытку, которая выглядит как подарок, а не как печать. Спасибо за это."',
+    role: {
+      ru: 'Учитель, Лиепая',
+      en: 'Teacher, Liepaja',
+    },
+    text: {
+      ru: '"Впервые вижу открытку, которая выглядит как подарок, а не как печать. Спасибо за это."',
+      en: '"Finally, a card that feels like a real gift, not just a print. Thank you for such quality."',
+    },
     createdAt: '2026-03-10T09:15:00Z',
   },
 ];
 
 export const Reviews = () => {
+  const { t, lang } = useTranslation();
+
   return (
     <section className="w-full bg-[#f7f3ef] dark:bg-black text-black dark:text-white py-20 md:py-32 transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16 md:mb-24 text-center flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-serif font-medium leading-tight antialiased">
-            Отзывы клиентов
+            {t('reviews.title')}
           </h2>
           <p className="mt-6 text-neutral-600 dark:text-neutral-400 font-light max-w-xl leading-relaxed">
-            Люди пишут нам, что чувствуют.
+            {t('reviews.subtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -59,7 +100,7 @@ export const Reviews = () => {
                   ))}
                 </div>
                 <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 font-light leading-relaxed mb-12">
-                  {review.text}
+                  {review.text[lang]}
                 </p>
               </div>
               <div className="flex items-center gap-4">
@@ -74,18 +115,21 @@ export const Reviews = () => {
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-sm font-semibold tracking-wide text-black dark:text-white">
-                    {review.name + ' ' + review.surname}
+                    {review.name[lang] + ' ' + review.surname[lang]}
                   </span>
                   <span className="text-xs text-neutral-500 font-light mt-0.5">
-                    {review.role}
+                    {review.role[lang]}
                   </span>
                   <span className="text-xs text-neutral-500 font-light mt-0.5">
                     {review.createdAt
-                      ? new Date(review.createdAt).toLocaleDateString('ru-RU', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })
+                      ? new Date(review.createdAt).toLocaleDateString(
+                          lang === 'ru' ? 'ru-RU' : 'en-US',
+                          {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          },
+                        )
                       : ''}
                   </span>
                 </div>

@@ -29,42 +29,14 @@
     "primary_cta": "Explore Catalog",
     "secondary_cta": "Customize"
   },
-  "productShowcase": {
-
-  },
+  "productShowcase": {},
   "stats": {
     "title": "How It Works",
     "subtitle": "Crafted by hand, every single day. See the magic for yourself."
   },
   "reviews": {
     "title": "Customer Reviews",
-    "subtitle": "Real stories from the heart.",
-    "customers": [
-      {
-        "id": 1,
-        "name": "Janis",
-        "surname": "Berziņš",
-        "text": "This card has so much soul. It feels like something a best friend would make just for you. A true work of art.",
-        "role": "Designer, Riga",
-        "createdAt": "2026-04-01T10:00:00Z"
-      },
-      {
-        "id": 2,
-        "name": "Andrejs",
-        "surname": "Pavlovs",
-        "text": "An anniversary gift for my wife. The creator added extra details that I didn't expect—it was stunning and truly unexpected.",
-        "role": "Entrepreneur, Rezekne",
-        "createdAt": "2026-04-02T12:30:00Z"
-      },
-      {
-        "id": 3,
-        "name": "Linda",
-        "surname": "Vitola",
-        "text": "Finally, a card that feels like a real gift, not just a print. Thank you for such quality.",
-        "role": "Teacher, Liepaja",
-        "createdAt": "2026-03-10T09:15:00Z"
-      }
-    ]
+    "subtitle": "Real stories from the heart."
   },
   "cta": {
     "title": "Create Your Card Right Now",
@@ -82,177 +54,42 @@
   "questions": {
     "title": "FAQ",
     "subtitle": "Everything you need to know.",
-    "items": {
-      "time": {
-        "question": "How long to craft a card?",
-        "answer": "It takes twenty minutes to prepare a standard card and forty for a personalized one, since every piece is made by hand. If we’re extra busy, your card might wait its turn in line, but the high quality remains our top priority."
-      },
-      "shipping": {
-        "question": "How do I send it to a recipient?",
-        "answer": "Cards travel straight to your recipient’s door. Simply select your preferred shipping method at checkout. We provide tracking and insurance for every order. Should anything get lost, we’ll craft a new one at no extra cost."
-      },
-      "satisfaction": {
-        "question": "What if I don't like the card",
-        "answer": "We offer free redos. If you're unhappy with the result, our master will craft a fresh version for you. This policy is always in effect, except in cases of fraud or where no proof of the issue is provided."
-      },
-      "photos": {
-        "question": "What kind of photos can I upload?",
-        "answer": "JPG or PNG up to 30MB. You must confirm that you own the photo or have the rights to use it. The system will automatically verify the file size and format."
-      },
-      "designs": {
-        "question": "How many design options are there?",
-        "answer": "There are three options to choose from. If none of them fit, you can generate three more. They will be added to the list so you can pick the best one."
-      }
-    },
     "cta": {
       "title": "Still have questions?",
       "subtitle": "Get in touch with us, and we'll get back to you.",
       "button": "Send a message"
     }
   },
-    "compare": {
-      "title": "Compare Services",
-      "options": {
-        "ready": "Ready-made",
-        "custom": "Custom"
-      },
-      "features": [
-        {
-          "id": "1",
-          "title": "Personalization",
-          "values": 
-          {
-            "ready": false,
-            "custom": true
-          }
-        },
-        {
-          "id": "2",
-          "title": "Production Time",
-          "values": 
-          {
-            "ready": true,
-            "custom": true
-          }
-        },
-        {
-          "id": "3",
-          "title": "Photo Upload",
-          "values": 
-          {
-            "ready": false,
-            "custom": true
-          }
-        },
-        {
-          "id": "4",
-          "title": "Design Selection",
-          "values": 
-          {
-            "ready": true,
-            "custom": true
-          }
-        },
-        {
-          "id": "5",
-          "title": "Delivery",
-          "values": 
-          {
-            "ready": true,
-            "custom": true
-          }
-        }
-    ],
+  "compare": {
+    "title": "Compare Services",
+    "options": {
+      "ready": "Ready-made",
+      "custom": "Custom"
+    },
     "primary_cta": "Explore Catalog",
-    "secondary_cta": "Customize"      
+    "secondary_cta": "Customize"
   },
   "footer": {
     "newsletter": {
       "title": "Stay updated on new designs and offers.",
       "placeholder": "Email address",
+      "status": {
+        "subscribe": "Subscribe",
+        "sending": "Sending...",
+        "success": "You've successfully subscribed!"
+      },
       "button": "Subscribe",
       "disclaimer": "By subscribing, you agree to our Privacy Policy and consent to receive updates."
     },
     "columns": {
       "cards": {
-        "title": "Cards",
-        "products": [
-          { 
-            "name": "Catalog",
-            "href": "/catalog" 
-          },
-          { 
-            "name": "Constructor",
-            "href": "/constructor" 
-          },
-          { 
-            "name": "About us",
-            "href": "/aboutUs" 
-          },
-          { 
-            "name": "Contacts",
-            "href": "/contacts" 
-          },
-          { 
-            "name": "Help",
-            "href": "/help" 
-          }
-      ]
-    },
-     "info": {
-        "title": "Information",
-        "products": [
-          { 
-            "name": "Blog",
-            "href": "/blog" 
-          },
-          { 
-            "name": "FAQ",
-            "href": "/faq" 
-          },
-          { 
-            "name": "Shipping",
-            "href": "/shipping" 
-          },
-          { 
-            "name": "Returns",
-            "href": "/returns" 
-          },
-          { 
-            "name": "Warranty",
-            "href": "/warranty" 
-          }
-        ]
+        "title": "Cards"
+      },
+      "info": {
+        "title": "Information"
       },
       "social": {
-        "title": "Follow us",
-        "products": [
-          { 
-            "name": "Facebook",
-            "href": "#",
-            "icon": "SiFacebook"
-          },
-          { 
-            "name": "Instagram",
-            "href": "#",
-            "icon": "SiInstagram" 
-          },
-          { 
-            "name": "X",
-            "href": "#",
-            "icon": "SiX" 
-          },
-          { 
-            "name": "LinkedIn",
-            "href": "#",
-            "icon": "SiLinkerd" 
-          },
-          { 
-            "name": "YouTube",
-            "href": "#",
-            "icon": "SiYoutube" 
-          }
-        ]
+        "title": "Follow us"
       }
     },
     "bottom": {

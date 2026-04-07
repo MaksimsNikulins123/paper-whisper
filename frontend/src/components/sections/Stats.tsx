@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 import { useTranslation } from '../ui/providers';
@@ -8,51 +8,50 @@ const stats = [
     id: 1,
     title: {
       ru: '30',
-      en: '30'
+      en: '30',
     },
     subtitle: {
       ru: 'Минут',
-      en: 'Minutes'
+      en: 'Minutes',
     },
     desc: {
       ru: 'среднее время изготовления открытки',
-      en: 'average production time.'
-    } 
+      en: 'average production time.',
+    },
   },
   {
     id: 2,
     title: {
       ru: '3',
-      en: '3'
+      en: '3',
     },
     subtitle: {
       ru: 'Варианта дизайна',
-      en: 'Design Options'
+      en: 'Design Options',
     },
     desc: {
       ru: 'предлагаем на выбор для каждого заказа',
-      en: 'curated for every order.'
-    }
+      en: 'curated for every order.',
+    },
   },
   {
     id: 3,
     title: {
       ru: 'До 30МВ',
-      en: 'Up to 30MB'
+      en: 'Up to 30MB',
     },
     subtitle: {
       ru: 'Максимальный',
-      en: 'Maximum'
+      en: 'Maximum',
     },
     desc: {
       ru: 'размер загружаемого фото',
-      en: 'file size for photos.'
-    }
+      en: 'file size for photos.',
+    },
   },
 ];
 
 export const Stats = () => {
-
   const { t, lang } = useTranslation();
 
   return (
@@ -91,6 +90,7 @@ export const Stats = () => {
               src="/stats_section/image-1.jpg"
               alt="Примеры готовых открыток"
               fill
+              loading="eager"
               className="object-cover object-center transform group-hover:scale-105 transition-transform duration-1000 ease-out"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
