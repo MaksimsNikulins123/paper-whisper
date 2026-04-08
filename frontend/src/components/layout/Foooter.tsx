@@ -243,26 +243,26 @@ export const Footer = () => {
         </div>
         <div className="pt-8 border-t border-neutral-200 dark:border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-neutral-500">
-            © 2026 Paper Whisper. Все права защищены.
+            {t('footer.bottom.copyright')}
           </p>
           <div className="flex gap-8 text-xs text-neutral-500">
             <Link
               href="/privacy"
               className="hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
             >
-              Политика конфиденциальности
+              {t('footer.bottom.privacy')}
             </Link>
             <Link
               href="/terms"
               className="hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
             >
-              Условия использования
+              {t('footer.bottom.terms')}
             </Link>
             <Link
               href="/cookies"
               className="hover:text-black dark:hover:text-white transition-colors underline underline-offset-4"
             >
-              Настройки cookies
+              {t('footer.bottom.cookies')}
             </Link>
           </div>
         </div>
