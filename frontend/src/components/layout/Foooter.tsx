@@ -117,7 +117,7 @@ export const Footer = () => {
   >('idle');
   const supabase = createClient();
 
-  const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
 

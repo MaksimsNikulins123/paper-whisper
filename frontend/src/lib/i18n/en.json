@@ -76,6 +76,7 @@
       "status": {
         "subscribe": "Subscribe",
         "sending": "Sending...",
+        "already_subscribed": "You are already subscribed to our newsletter.",
         "success": "You've successfully subscribed!"
       },
       "button": "Subscribe",
